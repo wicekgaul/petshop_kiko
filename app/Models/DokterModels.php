@@ -6,13 +6,9 @@ use CodeIgniter\Model;
 
 class DokterModels extends Model
 {
-    protected $table      = 'dokter';
-    protected $primaryKey = 'id';
+    protected $table      = 'Dokter';
 
-    protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
-
+    protected $primaryKey = 'Dokter_id';
+    
     protected $allowedFields = ['Nama','JenisKelamin','Telepon','Alamat', 'Email', 'Photo', 'User_id'];
 }

@@ -6,13 +6,9 @@ use CodeIgniter\Model;
 
 class ObatMasukModels extends Model
 {
-    protected $table      = 'obatmasuk';
-    protected $primaryKey = 'id';
+    protected $table      = 'ObatMasuk';
 
-    protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
+    protected $primaryKey = 'ObatMasuk_id';
 
     protected $allowedFields = ['Tanggal', 'Asal', 'Catatan'];
 }

@@ -6,13 +6,9 @@ use CodeIgniter\Model;
 
 class  PeliharaanModels extends Model
 {
-    protected $table      = 'peliharaan';
-    protected $primaryKey = 'id';
+    protected $table      = 'Peliharaan';
 
-    protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
+    protected $primaryKey = 'Peliharaan_id';
 
     protected $allowedFields = ['Nama','Jenis','Ras','Usia', 'BeratBadan', 'Pemilik_id'];
 }

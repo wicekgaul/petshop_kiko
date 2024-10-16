@@ -6,13 +6,9 @@ use CodeIgniter\Model;
 
 class RekamMediksModels extends Model
 {
-    protected $table      = 'rekammediks';
-    protected $primaryKey = 'id';
+    protected $table      = 'RekamMediks';
 
-    protected $useAutoIncrement = true;
-
-    protected $returnType     = 'array';
-    protected $useSoftDeletes = true;
+    protected $primaryKey = 'RekamMediks_id';
 
     protected $allowedFields = ['Peliharaan', 'Keluhan', 'Penanganan', 'Resep', 'Tanggal', 'Dokter_id', 'Peliharaan_id'];
 }

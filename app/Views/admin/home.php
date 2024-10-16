@@ -6,8 +6,8 @@
             >
 
               <div>
-                <h3 class="fw-bold mb-3">Dashboard</h3>
-                <h6 class="op-7 mb-2">Free Bootstrap 5 Admin Dashboard</h6>
+                <h3 class="fw-bold mb-3">Petshop</h3>
+                <h6 class="op-7 mb-2">Daftar Peliharaan</h6>
               </div>
               <div class="ms-md-auto py-2 py-md-0">
                 <a href="#" class="btn btn-primary btn-round">Tambah Pemilik</a>
@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4 class="card-title">Basic</h4>
+                    <h4 class="card-title">Daftar Data Pemilik</h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -43,10 +43,10 @@
                         </tfoot>
                         <tbody>
                           <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
+                            <td>Wicek</td>
+                            <td>Doyo</td>
+                            <td>081343415367</td>
+                            <td>wicek@gmail.com</td>
                           </tr>
                         </tbody>
                       </table>
