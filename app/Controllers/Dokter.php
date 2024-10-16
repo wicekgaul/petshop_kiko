@@ -2,53 +2,66 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\DokterModels;
-use App\Models\UserModels;
 
 class Dokter extends BaseController
 {
     protected $Dokter;
-    protected $user;
+    // protected $dokter;
     public function __construct()
     {
         $this->Dokter = new DokterModels();
-        $this->user = new UserModels();
-    }
-    public function index()
-    {
-        $data = [
-            'Dokter' => $this->Dokter->findAll(),
-            'title' => "PETHSOP | Dokter",
-            'judul' => "Data Dokter"
-        ];
-        return view('admin/dokter/index', $data);
-    }
-    public function tambah()
-    {
-        $data = [
-            'title' => "PETHSOP | Dokter",
-            'judul' => "Data Dokter"
-        ];
-        return view('admin/dokter/tambah', $data);
+        // $this->dokter = new DokterModels();
     }
 
-    public function save()
+    function index(): string
     {
-        try {
-            $user = [
-                'username' => $this->request->getVar('username'),
-                'password' => password_hash($this->request->getVar('username'), PASSWORD_DEFAULT),
-            ];
-            $this->user->insert($user);
-            $User_id = $this->user->getInsertID();
-            $dokter = [
-                'User_id' => $User_id,
-                'Nama' => $this->request->getVar('Nama')
-            ];
-            $this->Dokter->save($dokter);
-            return redirect()->to(base_url('dokter'));
-        } catch (\Throwable $th) {
-        }
+        $data['judul'] = "Dokter Hewan";
+        $data['title'] = "PETSHOP | Dokter";
+        $data['data'] = $this->Dokter->findAll();
+        return view('admin/Dokter/index', $data);
+    }
+
+    function tambah(): string
+    {
+        $data['judul'] = "Tambah Dokter Hewan";
+        $data['title'] = "PETSHOP | Dokter";;
+        return view('admin/Dokter/tambah', $data);
+    }
+    function simpan()
+    {
+        $data = [
+            'Nama' => $this->request->getVar('Nama'),
+            'Alamat' => $this->request->getVar('Alamat'),
+            'Telepon' => $this->request->getVar('Telepon'),
+            'Email' => $this->request->getVar('Email'),
+        ];
+        $this->Dokter->save($data);
+        return redirect()->to(base_url('Dokter'));
+    }
+    function ubah($Dokter_id = null): string
+    {
+        $data['judul'] = "Ubah Dokter Hewan";
+        $data['title'] = "PETSHOP | Dokter";;
+        $data['item'] = $this->Dokter->where('Dokter_id', $Dokter_id)->first();
+        return view('admin/Dokter/ubah', $data);
+    }
+    function update()
+    {
+        $data = [
+            'Dokter_id' => $this->request->getVar('Dokter_id'),
+            'Nama' => $this->request->getVar('Nama'),
+            'Alamat' => $this->request->getVar('Alamat'),
+            'Telepon' => $this->request->getVar('Telepon'),
+            'Email' => $this->request->getVar('Email'),
+        ];
+        $this->Dokter->save($data);
+        return redirect()->to(base_url('Dokter'));
+    }
+
+    function delete($Dokter_id = null)
+    {
+        $this->Dokter->delete($Dokter_id);
+        return redirect()->to(base_url('Dokter'));
     }
 }

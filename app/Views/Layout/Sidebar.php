@@ -50,7 +50,7 @@
         </li>
         <li class="nav-item">
           <a
-            href="/dokter">
+            href="/Dokter">
             <i class="fas fa-home"></i>
             <p>Dokter</p>
           </a>

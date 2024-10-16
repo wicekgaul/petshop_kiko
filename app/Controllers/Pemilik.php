@@ -8,11 +8,11 @@ use App\Models\PemilikModels;
 class Pemilik extends BaseController
 {
     protected $pemilik;
-    protected $dokter;
+    // protected $dokter;
     public function __construct()
     {
         $this->pemilik = new PemilikModels();
-        $this->dokter = new DokterModels();
+        // $this->dokter = new DokterModels();
     }
 
     function index(): string
